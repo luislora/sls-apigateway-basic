@@ -1,0 +1,25 @@
+service: sls-apigateway-basic
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+     - http:
+         method: get
+         path: hello
+  hola:
+    handler: handler.hola
+    events:
+     - http:
+         method: get
+         path: hola/{name}
+  moi:
+    handler: handler.moi
+    events:
+     - http:
+         method: post
+         path: moi
